@@ -12,6 +12,10 @@
         <module>study-zk</module>
         <module>study-dubbo</module>
         <module>study-springboot</module>
+        <module>study-annotation</module>
+        <module>study-metaq</module>
+        <module>study-camel</module>
+        <module>study-jdk8</module>
     </modules>
 
     <properties>
@@ -109,12 +113,27 @@
         <zkclient.version>0.4</zkclient.version>
         <zookeeper.version>3.4.5</zookeeper.version>
 
-        <!--rpc-->
+        <!--alibaba-->
         <dubbo.version>2.0.13</dubbo.version>
+        <metaq.version>3.6.2.Final</metaq.version>
+        <rocket.version>3.6.2.Final</rocket.version>
 
     </properties>
     <dependencyManagement>
         <dependencies>
+
+            <!-- Alibaba -->
+            <dependency>
+                <groupId>com.taobao.metaq.final</groupId>
+                <artifactId>metaq-client</artifactId>
+                <version>${metaq.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.rocketmq</groupId>
+                <artifactId>rocketmq-all</artifactId>
+                <version>${rocket.version}</version>
+            </dependency>
             <dependency>
                 <groupId>com.101tec</groupId>
                 <artifactId>zkclient</artifactId>
@@ -669,6 +688,28 @@
                 <version>${nosqlunit.version}</version>
             </dependency>
             <!-- TEST end -->
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>3.8.1</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-core</artifactId>
+                <version>2.17.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-stream</artifactId>
+                <version>2.17.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-jetty</artifactId>
+                <version>2.17.0</version>
+            </dependency>
     </dependencies>
     </dependencyManagement>
 
